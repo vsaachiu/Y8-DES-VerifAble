@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VerifAble Sentinels Inc. - Training Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        .tab-btn {
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .tab-btn.active {
+            color: #2563eb;
+            border-color: #2563eb;
+            background-color: #ffffff;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-slate-50">
+
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-white text-lg">
+                    V
+                </div>
+                <div>
+                    <span class="text-base font-bold text-slate-900 tracking-tight block">VerifAble Sentinels Inc.</span>
+                    <span class="text-xs text-slate-500 block">Truly Adaptable Robotic Services</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 text-right text-xs text-slate-500">
+                <div>
+                    <span class="font-medium text-slate-700 block">Junior Logic Engineer Workspace</span>
+                    <span>Coding Phase 1: Sensor Calibration</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col">
+        
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm mb-8">
+            <div class="max-w-4xl">
+                <span class="text-xs font-bold uppercase tracking-wider text-blue-600 block mb-1">Employee Dashboard</span>
+                <h1 class="text-2xl font-bold text-slate-900 mb-3">
+                    Your Assignment: Calibrating the Robot Sensors
+                </h1>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Welcome to the team! Our company builds advanced automated robots to help businesses take over decision-making tasks at their front doors. But before our robots can use their brains to make decisions, they need to be able to "see" and store information correctly. Your job is to study our clients' rules, look closely at the people in the pictures, and write Java variables to save their characteristics using the correct data types.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex border-b border-slate-200 mb-6 bg-slate-100/60 p-1 rounded-lg max-w-2xl">
+            <button onclick="switchTab('overview')" id="tab-overview" class="tab-btn active flex-1 text-center py-2.5 rounded-md font-medium text-xs sm:text-sm text-slate-600 hover:text-slate-900 border border-transparent">
+                Coding Guidelines
+            </button>
+            <button onclick="switchTab('scene1')" id="tab-scene1" class="tab-btn flex-1 text-center py-2.5 rounded-md font-medium text-xs sm:text-sm text-slate-600 hover:text-slate-900 border border-transparent">
+                Scene 1: Rollercoaster
+            </button>
+            <button onclick="switchTab('scene2')" id="tab-scene2" class="tab-btn flex-1 text-center py-2.5 rounded-md font-medium text-xs sm:text-sm text-slate-600 hover:text-slate-900 border border-transparent">
+                Scene 2: Airport Gate
+            </button>
+            <button onclick="switchTab('scene3')" id="tab-scene3" class="tab-btn flex-1 text-center py-2.5 rounded-md font-medium text-xs sm:text-sm text-slate-600 hover:text-slate-900 border border-transparent">
+                Scene 3: VIP Club
+            </button>
+        </div>
+
+        <section id="content-overview" class="tab-content block space-y-6">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                <h2 class="text-base font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100">Official Programming Rules</h2>
+                <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+                    As you write code to digitize each person's features, remember our most important rule: <strong>Think of a variable as a labeled empty box</strong>. The contents of the box will change depending on which person the robot looks at, but the box label and data type stay exactly the same.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-4 rounded-lg bg-slate-50 border border-slate-200/60 text-sm">
+                        <div class="font-bold text-slate-800 mb-1.5">&#128230; Naming Rules</div>
+                        <p class="text-slate-600 text-xs leading-relaxed">Create neat, descriptive variable names using lower camelCase architecture (e.g., <code>hasTicket</code> or <code>guestAge</code>).</p>
+                    </div>
+                    <div class="p-4 rounded-lg bg-slate-50 border border-slate-200/60 text-sm">
+                        <div class="font-bold text-blue-700 mb-1.5">&#128161; Choosing Types</div>
+                        <p class="text-slate-600 text-xs leading-relaxed">Pick your data type carefully: use <code>int</code> for whole numbers, <code>double</code> for decimals, and <code>boolean</code> for true/false answers.</p>
+                    </div>
+                    <div class="p-4 rounded-lg bg-slate-50 border border-slate-200/60 text-sm">
+                        <div class="font-bold text-amber-700 mb-1.5">&#128274; Handling Text</div>
+                        <p class="text-slate-600 text-xs leading-relaxed">When saving strings of text, make sure to capitalize the <code>String</code> keyword and put your value inside double quotation marks <code>""</code>.</p>
+                    </div>
+                </div>
+                <div class="mt-6 bg-slate-900 p-4 rounded-lg">
+                    <span class="text-xs text-slate-400 font-semibold block mb-2 tracking-wide">How your final code should look:</span>
+                    <pre class="text-xs text-sky-400 font-mono overflow-x-auto">
+// === TARGET 1 CHARACTERISTICS ===
+[data_type] [yourVariableName] = [value_from_picture];
+[data_type] [anotherVariable]  = [value_from_picture];</pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="content-scene1" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100 mb-6">
+                    <div>
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest block">Client Profile</span>
+                        <h2 class="text-lg font-bold text-slate-900">Scene 1: The Theme Park Attendant Bot</h2>
+                        <span class="text-xs text-blue-600 font-medium">Client: ThrillSeeker Amusements</span>
+                    </div>
+                    <span class="self-start sm:self-center text-xs font-semibold bg-red-50 text-red-700 border border-red-200 px-2.5 py-1 rounded-md">Safety Enforcement</span>
+                </div>
+                
+                <div class="space-y-4 text-sm text-slate-600 leading-relaxed mb-6">
+                    <p><strong>The Mission:</strong> The client needs our Sentinel bot to manage the entrance line to their record-breaking mega-coaster.</p>
+                    <p><strong>The Rules:</strong> To ride, a guest must be over 120cm tall, must not be pregnant (for safety reasons), and must possess at least 5 physical ride tickets.</p>
+                </div>
+
+                <div class="bg-slate-50 border-2 border-dashed border-slate-300 rounded-xl my-6 flex flex-col items-center justify-center p-16 text-center">
+                    <img src="1-1.png" alt="Scene 1 Image Grid" class="max-w-full h-auto" />
+                </div>
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200/60 mt-6">
+                    <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Your Sensor Calibration Target:</h3>
+                    <p class="text-xs text-slate-600 mb-4">For each of the 6 targets in the image grid, write the Java code to store these exact values:</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 shadow-sm">
+                            <span class="text-slate-900 block font-bold mb-0.5">1. Height Tracker</span>
+                            <span class="text-slate-500">The target's physical height.</span>
+                        </div>
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 shadow-sm">
+                            <span class="text-slate-900 block font-bold mb-0.5">2. Safety Check</span>
+                            <span class="text-slate-500">Whether the target is currently pregnant.</span>
+                        </div>
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 shadow-sm">
+                            <span class="text-slate-900 block font-bold mb-0.5">3. Ticket Count</span>
+                            <span class="text-slate-500">The exact number of physical tickets they are holding.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="content-scene2" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100 mb-6">
+                    <div>
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest block">Client Profile</span>
+                        <h2 class="text-lg font-bold text-slate-900">Scene 2: The Airport Border-Control Bot</h2>
+                        <span class="text-xs text-blue-600 font-medium">Client: Metropolitan International Airport</span>
+                    </div>
+                    <span class="self-start sm:self-center text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200 px-2.5 py-1 rounded-md">Security Clearance</span>
+                </div>
+
+                <div class="space-y-4 text-sm text-slate-600 leading-relaxed mb-6">
+                    <p><strong>The Mission:</strong> Replace the slow, human-managed customs queues with our high-speed automated security gates.</p>
+                    <p><strong>The Rules:</strong> Passengers can only pass if they have a fully valid passport, are carrying zero contraband or illegal items, and are not flagged as suspicious. The airport also needs to log every single traveler by their specific flight gate zone.</p>
+                </div>
+
+                <div class="bg-slate-50 border-2 border-dashed border-slate-300 rounded-xl my-6 flex flex-col items-center justify-center p-16 text-center">
+                     <img src="1-2.png" alt="Scene 2 Image Grid" class="max-w-full h-auto" />
+                </div>
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200/60 mt-6">
+                    <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Your Sensor Calibration Target:</h3>
+                    <p class="text-xs text-slate-600 mb-4">For each of the 6 targets in the image grid, write the Java code to store these exact values:</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 text-xs">
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 shadow-sm">
+                            <span class="text-slate-900 block font-bold mb-0.5">1. Flight Zone</span>
+                            <span class="text-slate-500">The single letter of their designated flight travel zone.</span>
+                        </div>
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 shadow-sm">
+                            <span class="text-slate-900 block font-bold mb-0.5">2. Bag Tally</span>
+                            <span class="text-slate-500">The exact number of bags or briefcases they are carrying.</span>
+                        </div>
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 shadow-sm">
+                            <span class="text-slate-900 block font-bold mb-0.5">3. Passport Check</span>
+                            <span class="text-slate-500">Whether or not they have a verified valid passport.</span>
+                        </div>
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 shadow-sm">
+                            <span class="text-slate-900 block font-bold mb-0.5">4. Compliance Alert</span>
+                            <span class="text-slate-500">Whether they look suspicious (e.g., wearing sunglasses indoors or a heavy winter coat in summer).</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="content-scene3" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100 mb-6">
+                    <div>
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest block">Client Profile</span>
+                        <h2 class="text-lg font-bold text-slate-900">Scene 3: The VIP Club Gatekeeper Bot</h2>
+                        <span class="text-xs text-blue-600 font-medium">Client: Club Neon-Grid</span>
+                    </div>
+                    <span class="self-start sm:self-center text-xs font-semibold bg-sky-50 text-sky-700 border border-sky-200 px-2.5 py-1 rounded-md">Access Control</span>
+                </div>
+
+                <div class="space-y-4 text-sm text-slate-600 leading-relaxed mb-6">
+                    <p><strong>The Mission:</strong> Filter out non-VIP guests and minors right at the entrance door of an upscale high-tech lounge.</p>
+                    <p><strong>The Rules:</strong> Guests must be of legal age (18+), have an active premium membership status, have enough funds in their digital wallet to cover the entrance cover charge, and must pass the club's strict dress code (no casual athletic sneakers allowed).</p>
+                </div>
+
+                <div class="bg-slate-50 border-2 border-dashed border-slate-300 rounded-xl my-6 flex flex-col items-center justify-center p-16 text-center">
+                    <img src="1-3.png" alt="Scene 3 Image Grid" class="max-w-full h-auto" />
+                </div>
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200/60 mt-6">
+                    <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Your Sensor Calibration Target:</h3>
+                    <p class="text-xs text-slate-600 mb-4">For each of the 6 targets in the image grid, write the Java code to store these exact values:</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 text-xs">
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 shadow-sm">
+                            <span class="text-slate-900 block font-bold mb-0.5">1. Guest Age</span>
+                            <span class="text-slate-500">The target's age in whole years.</span>
+                        </div>
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 shadow-sm">
+                            <span class="text-slate-900 block font-bold mb-0.5">2. Membership Tier</span>
+                            <span class="text-slate-500">Their current VIP tier level text (which could be Platinum, Gold, or None).</span>
+                        </div>
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 shadow-sm">
+                            <span class="text-slate-900 block font-bold mb-0.5">3. Digital Wallet</span>
+                            <span class="text-slate-500">The exact monetary balance displayed on their digital wallet app.</span>
+                        </div>
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 shadow-sm">
+                            <span class="text-slate-900 block font-bold mb-0.5">4. Dress Code Check</span>
+                            <span class="text-slate-500">Whether or not they are wearing athletic sneakers.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        function switchTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-btn');
+            const contents = document.querySelectorAll('.tab-content');
+            
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.add('hidden'));
+            
+            document.getElementById('tab-' + tabId).classList.add('active');
+            document.getElementById('content-' + tabId).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
