@@ -5,52 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VerifAble Sentinels Inc. - Interactive Data Streams</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            background-color: #f8fafc;
-            color: #334155;
-            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        }
-        .tab-btn {
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .tab-btn.active {
-            color: #2563eb;
-            border-color: #2563eb;
-            background-color: #ffffff;
-            font-weight: 600;
-            box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-        }
-        .code-block {
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-        }
-        .scratchpad-box {
-            border-top: 1px solid #e2e8f0;
-            padding-top: 1.25rem;
-        }
-        .scratchpad-input {
-            width: 100%;
-            min-height: 16rem;
-            resize: vertical;
-            border: 1px solid #cbd5e1;
-            border-radius: 0.75rem;
-            background-color: #0f172a;
-            color: #e2e8f0;
-            padding: 1rem;
-            font-size: 0.875rem;
-            line-height: 1.45;
-            tab-size: 4;
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-            outline: none;
-        }
-        .scratchpad-input:focus {
-            border-color: #60a5fa;
-            box-shadow: 0 0 0 3px rgb(96 165 250 / 0.25);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="min-h-screen flex flex-col bg-slate-50">
+<body class="phase2 min-h-screen flex flex-col bg-slate-50">
 
     <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -133,15 +90,16 @@ public class Main {
         <span class="text-sky-400 font-bold">// 2. INITIALIZE THE SCANNER (Turn on the robot's microphone)</span>
         Scanner robotInput = new Scanner(System.in);
         
-        <span class="text-green-400 font-bold">// 3. PROMPT THE USER (Ask the target a question)</span>
+        <span class="text-green-400 font-bold">// 3a. PROMPT THE USER (Ask the target a question)</span>
         System.out.println(<span class="text-green-300">"🤖 [VerifAble Sentinel Unit - ONLINE]"</span>);
         <span class="text-slate-300">// Example: System.out.println("Please enter your age:");</span>
         
-        <span class="text-purple-400 font-bold">// 4. ASSIGNMENT (Record their spoken answer into your box)</span>
+        <span class="text-purple-400 font-bold">// 3b. ASSIGNMENT (Record their spoken answer into your box)</span>
         <span class="text-slate-300">// The tool must match the box! (e.g., nextLine(), nextInt(), nextDouble(), nextBoolean())
-        // Example: guestAge = robotInput.nextInt();</span>
+        // Example: guestAge = robotInput.nextInt();
+        // REPEAT 3 and 4 for all needed information</span>
         
-        <span class="text-orange-400 font-bold">// 5. COMBINED OUTPUT (Speak back to the user)</span>
+        <span class="text-orange-400 font-bold">// 4. COMBINED OUTPUT (Speak back to the user)</span>
         System.out.println(<span class="text-green-300">"----------------------------------------"</span>);
         <span class="text-slate-300">// Use the '+' symbol to stitch text and variables together.
         // Example: System.out.println("Access granted. Target is " + guestAge + " years old.");</span>
@@ -194,6 +152,87 @@ public class Main {
                         </li>
                     </ul>
 
+                    <div class="space-y-3">
+                        <details class="bg-slate-50 border border-slate-200 rounded-xl overflow-hidden">
+                            <summary class="cursor-pointer list-none px-5 py-4 flex items-center justify-between gap-4 text-slate-800 font-semibold">
+                                <span>Quick Guide 1: Prompting the user with System.out.println</span>
+                                <span class="text-sm text-blue-600">Click to expand</span>
+                            </summary>
+                            <div class="px-5 pb-5 pt-0 text-sm text-slate-700 space-y-2">
+                                <p>Use a clear question so the user knows exactly what to type.</p>
+                                <pre class="code-block text-xs sm:text-sm bg-slate-900 text-slate-200 p-3 rounded-lg overflow-x-auto">System.out.println("Please enter your name:");</pre>
+                                <p>Tip: Put prompts right before the input line that reads the answer.</p>
+                            </div>
+                        </details>
+
+                        <details class="bg-slate-50 border border-slate-200 rounded-xl overflow-hidden">
+                            <summary class="cursor-pointer list-none px-5 py-4 flex items-center justify-between gap-4 text-slate-800 font-semibold">
+                                <span>Quick Guide 2: Reading input with Scanner (and converting types)</span>
+                                <span class="text-sm text-blue-600">Click to expand</span>
+                            </summary>
+                            <div class="px-5 pb-5 pt-0 text-sm text-slate-700 space-y-2">
+                                <p>You can read each data type directly, or read text with <code>nextLine()</code> and convert.</p>
+                                <pre class="code-block text-xs sm:text-sm bg-slate-900 text-slate-200 p-3 rounded-lg overflow-x-auto">Scanner robotInput = new Scanner(System.in);
+
+String name = robotInput.nextLine();
+int age = robotInput.nextInt();
+double temp = robotInput.nextDouble();
+boolean isVip = robotInput.nextBoolean();</pre>
+                                <pre class="code-block text-xs sm:text-sm bg-slate-900 text-slate-200 p-3 rounded-lg overflow-x-auto">// If you read everything using nextLine():
+String ageText = robotInput.nextLine();
+int age = Integer.parseInt(ageText);
+
+String tempText = robotInput.nextLine();
+double temp = Double.parseDouble(tempText);
+
+String vipText = robotInput.nextLine();
+boolean isVip = Boolean.parseBoolean(vipText);</pre>
+                            </div>
+                        </details>
+
+                        <details class="bg-slate-50 border border-slate-200 rounded-xl overflow-hidden">
+                            <summary class="cursor-pointer list-none px-5 py-4 flex items-center justify-between gap-4 text-slate-800 font-semibold">
+                                <span>Quick Guide 3: Combining text + variables in output</span>
+                                <span class="text-sm text-blue-600">Click to expand</span>
+                            </summary>
+                            <div class="px-5 pb-5 pt-0 text-sm text-slate-700 space-y-2">
+                                <p>Use <code>+</code> to join static text and dynamic variable values.</p>
+                                <pre class="code-block text-xs sm:text-sm bg-slate-900 text-slate-200 p-3 rounded-lg overflow-x-auto">String guestName = "Alex";
+int ticketCount = 12;
+
+System.out.println("Welcome, " + guestName + "!");
+System.out.println("You currently have " + ticketCount + " tickets.");</pre>
+                                <p>Pattern: <code>"text" + variable + "more text"</code></p>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="scratchpad-box">
+                        <h3 class="text-lg font-bold text-slate-800 mb-2">Code Scratchpad</h3>
+                        <p class="text-sm text-slate-600 mb-3">Write Java code here. It auto-saves to this browser as you type.</p>
+                        <textarea class="scratchpad-input" data-scratchpad-id="scene1" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" wrap="off">import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        // 1. VARIABLE DECLARATION (Create the empty boxes you need here)
+
+        // 2. INITIALIZE THE SCANNER (Turn on the robot's microphone)
+        Scanner robotInput = new Scanner(System.in);
+
+        // 3. PROMPT THE USER (Ask the target a question)
+        System.out.println("[VerifAble Sentinel Unit - ONLINE]");
+
+        // 4. ASSIGNMENT (Record their spoken answer into your box)
+
+        // 5. COMBINED OUTPUT (Speak back to the user)
+        System.out.println("----------------------------------------");
+
+        // Clean up our scanner stream
+        robotInput.close();
+    }
+}</textarea>
+                    </div>
                     <details class="bg-slate-50 border border-slate-200 rounded-xl overflow-hidden">
                         <summary class="cursor-pointer list-none px-5 py-4 flex items-center justify-between gap-4 text-slate-800 font-semibold">
                             <span>Answer Key: Tutorial 01</span>
@@ -229,33 +268,6 @@ public class Main {
                             </div>
                         </div>
                     </details>
-
-                    <div class="scratchpad-box">
-                        <h3 class="text-lg font-bold text-slate-800 mb-2">Code Scratchpad</h3>
-                        <p class="text-sm text-slate-600 mb-3">Write Java code here. It auto-saves to this browser as you type.</p>
-                        <textarea class="scratchpad-input" data-scratchpad-id="scene1" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" wrap="off">import java.util.Scanner;
-
-public class Main {
-    public static void main(String[] args) {
-
-        // 1. VARIABLE DECLARATION (Create the empty boxes you need here)
-
-        // 2. INITIALIZE THE SCANNER (Turn on the robot's microphone)
-        Scanner robotInput = new Scanner(System.in);
-
-        // 3. PROMPT THE USER (Ask the target a question)
-        System.out.println("[VerifAble Sentinel Unit - ONLINE]");
-
-        // 4. ASSIGNMENT (Record their spoken answer into your box)
-
-        // 5. COMBINED OUTPUT (Speak back to the user)
-        System.out.println("----------------------------------------");
-
-        // Clean up our scanner stream
-        robotInput.close();
-    }
-}</textarea>
-                    </div>
                 </div>
             </div>
         </section>
