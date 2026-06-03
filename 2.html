@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VerifAble Sentinels Inc. - Interactive Data Streams</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        .tab-btn {
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .tab-btn.active {
+            color: #2563eb;
+            border-color: #2563eb;
+            background-color: #ffffff;
+            font-weight: 600;
+            box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        }
+        .code-block {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-slate-50">
+
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-white text-lg">
+                    V
+                </div>
+                <div>
+                    <span class="text-base font-bold text-slate-900 tracking-tight block">VerifAble Sentinels Inc.</span>
+                    <span class="text-xs text-slate-500 block">Truly Adaptable Robotic Services</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 text-right text-xs text-slate-500">
+                <div class="hidden sm:block">
+                    <span class="font-medium text-slate-700 block">Junior Logic Engineer Workspace</span>
+                    <span>Coding Phase 2: Interactive Data Streams</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col">
+        
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm mb-8">
+            <div class="max-w-4xl">
+                <span class="text-xs font-bold uppercase tracking-wider text-blue-600 block mb-1">Employee Dashboard</span>
+                <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
+                    Project Phase 2: Interactive Communication
+                </h1>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Until now, our robots have only been able to read static data. It's time to activate their microphone and communication arrays! By utilizing Java's <code>Scanner</code> tool, you will program our Sentinel units to ask human targets questions, listen to their answers, store those answers in variables, and speak back to them. Review the template guide, then complete the 7 client tickets below.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex flex-wrap gap-2 border-b border-slate-200 pb-4 mb-6">
+            <button onclick="switchTab('overview')" id="tab-overview" class="tab-btn active px-4 py-2 rounded-md font-medium text-sm text-slate-600 hover:text-slate-900 border border-transparent bg-slate-100/60">
+                &#128214; Template Guide
+            </button>
+            <button onclick="switchTab('scene1')" id="tab-scene1" class="tab-btn px-4 py-2 rounded-md font-medium text-sm text-slate-600 hover:text-slate-900 border border-transparent bg-slate-100/60">
+                Ticket 01 (Tutorial)
+            </button>
+            <button onclick="switchTab('scene2')" id="tab-scene2" class="tab-btn px-4 py-2 rounded-md font-medium text-sm text-slate-600 hover:text-slate-900 border border-transparent bg-slate-100/60">
+                Ticket 02
+            </button>
+            <button onclick="switchTab('scene3')" id="tab-scene3" class="tab-btn px-4 py-2 rounded-md font-medium text-sm text-slate-600 hover:text-slate-900 border border-transparent bg-slate-100/60">
+                Ticket 03
+            </button>
+            <button onclick="switchTab('scene4')" id="tab-scene4" class="tab-btn px-4 py-2 rounded-md font-medium text-sm text-slate-600 hover:text-slate-900 border border-transparent bg-slate-100/60">
+                Ticket 04
+            </button>
+            <button onclick="switchTab('scene5')" id="tab-scene5" class="tab-btn px-4 py-2 rounded-md font-medium text-sm text-slate-600 hover:text-slate-900 border border-transparent bg-slate-100/60">
+                Ticket 05
+            </button>
+            <button onclick="switchTab('scene6')" id="tab-scene6" class="tab-btn px-4 py-2 rounded-md font-medium text-sm text-slate-600 hover:text-slate-900 border border-transparent bg-slate-100/60">
+                Ticket 06
+            </button>
+            <button onclick="switchTab('scene7')" id="tab-scene7" class="tab-btn px-4 py-2 rounded-md font-medium text-sm text-slate-600 hover:text-slate-900 border border-transparent bg-slate-100/60">
+                Ticket 07
+            </button>
+        </div>
+
+        <section id="content-overview" class="tab-content block space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-xl border border-slate-200 shadow-sm">
+                <h2 class="text-xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100">Mastering the Universal Template</h2>
+                <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+                    Every interactive robot interaction follows a strict 5-step protocol. You will use this exact template in JDoodle to build every client solution. Study the structure below before moving to your first ticket.
+                </p>
+                
+                <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 shadow-inner overflow-x-auto">
+<pre class="code-block text-sm leading-relaxed"><span class="text-slate-400">import java.util.Scanner; // Required to let our robot read user input
+
+public class Main {
+    public static void main(String[] args) {</span>
+        
+        <span class="text-amber-400 font-bold">// 1. 🟨 VARIABLE DECLARATION (Create the empty boxes you need here)</span>
+        <span class="text-slate-300">// Decide what data types you need and give them professional labels.
+        // Example: int guestAge;</span>
+        
+        <span class="text-sky-400 font-bold">// 2. INITIALIZE THE SCANNER (Turn on the robot's microphone)</span>
+        Scanner robotInput = new Scanner(System.in);
+        
+        <span class="text-green-400 font-bold">// 3. PROMPT THE USER (Ask the target a question)</span>
+        System.out.println(<span class="text-green-300">"🤖 [VerifAble Sentinel Unit - ONLINE]"</span>);
+        <span class="text-slate-300">// Example: System.out.println("Please enter your age:");</span>
+        
+        <span class="text-purple-400 font-bold">// 4. ASSIGNMENT (Record their spoken answer into your box)</span>
+        <span class="text-slate-300">// The tool must match the box! (e.g., nextLine(), nextInt(), nextDouble(), nextBoolean())
+        // Example: guestAge = robotInput.nextInt();</span>
+        
+        <span class="text-orange-400 font-bold">// 5. COMBINED OUTPUT (Speak back to the user)</span>
+        System.out.println(<span class="text-green-300">"----------------------------------------"</span>);
+        <span class="text-slate-300">// Use the '+' symbol to stitch text and variables together.
+        // Example: System.out.println("Access granted. Target is " + guestAge + " years old.");</span>
+        
+        <span class="text-slate-500">// Clean up our scanner stream
+        robotInput.close();</span>
+    <span class="text-slate-400">}
+}</span></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="content-scene1" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-xl border-2 border-blue-200 shadow-md relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg uppercase tracking-widest">Tutorial Mode Active</div>
+                
+                <span class="text-sm font-bold text-blue-600 uppercase tracking-widest block mb-2">Client Ticket 01</span>
+                <h2 class="text-3xl font-black text-slate-900 mb-2">The Lobby Greeter</h2>
+                <div class="flex items-center gap-2 mb-6 text-sm text-slate-500 font-medium">
+                    <span>&#127980; Client: Corporate Headquarters</span>
+                </div>
+                
+                <div class="bg-blue-50 p-6 rounded-lg border border-blue-100 mb-8">
+                    <h3 class="font-bold text-blue-900 mb-2 text-lg">Mission Briefing</h3>
+                    <p class="text-blue-800 leading-relaxed">
+                        A major corporate headquarters wants a friendly robot stationed in their main lobby. When a guest walks up, the robot must ask for their name, record it into memory, and then output a customized, friendly greeting welcoming them to the building.
+                    </p>
+                </div>
+
+                <div class="space-y-6">
+                    <h3 class="text-xl font-bold text-slate-800 border-b border-slate-200 pb-2">Target Data Requirements:</h3>
+                    <p class="text-slate-600">To complete this ticket in JDoodle, copy the Universal Template and follow these tutorial steps:</p>
+                    
+                    <ul class="space-y-4 text-sm text-slate-700">
+                        <li class="flex items-start gap-3">
+                            <span class="bg-slate-200 text-slate-700 font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">1</span>
+                            <div><strong>Variable Declaration:</strong> The robot needs a labeled box to store a person's name. A name is a collection of alphanumeric text characters. Choose the correct text data type and invent a good variable name (like <code>guestName</code>).</div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="bg-slate-200 text-slate-700 font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">3</span>
+                            <div><strong>Prompt:</strong> Use <code>System.out.println</code> to print a message asking the user for their name.</div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="bg-slate-200 text-slate-700 font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">4</span>
+                            <div><strong>Assignment:</strong> You need to read text. Use the command <code>robotInput.nextLine();</code> and assign it to the variable box you made in step 1.</div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="bg-slate-200 text-slate-700 font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">5</span>
+                            <div><strong>Output:</strong> Print a message that says "Welcome to the building, [Name]!" Make sure to use the <code>+</code> sign to connect your text string and your variable!</div>
+                        </li>
+                    </ul>
+
+                    <details class="bg-slate-50 border border-slate-200 rounded-xl overflow-hidden">
+                        <summary class="cursor-pointer list-none px-5 py-4 flex items-center justify-between gap-4 text-slate-800 font-semibold">
+                            <span>Answer Key: Tutorial 01</span>
+                            <span class="text-sm text-blue-600">Click to expand</span>
+                        </summary>
+                        <div class="px-5 pb-5 pt-0">
+                            <p class="text-sm text-slate-600 mb-4">One valid solution is:</p>
+                            <div class="bg-slate-900 p-5 rounded-xl border border-slate-800 shadow-inner overflow-x-auto">
+<pre class="code-block text-sm leading-relaxed"><span class="text-slate-400">import java.util.Scanner; // Required to let our robot read user input
+
+public class Main {
+    public static void main(String[] args) {</span>
+
+        <span class="text-amber-400 font-bold">// 1. 🟨 VARIABLE DECLARATION (Create the empty boxes you need here)</span>
+        <span class="text-slate-300">String guestName;</span>
+
+        <span class="text-sky-400 font-bold">// 2. INITIALIZE THE SCANNER (Turn on the robot's microphone)</span>
+        <span class="text-slate-300">Scanner robotInput = new Scanner(System.in);</span>
+
+        <span class="text-green-400 font-bold">// 3. PROMPT THE USER (Ask the target a question)</span>
+        <span class="text-slate-300">System.out.println("Please enter your name:");</span>
+
+        <span class="text-purple-400 font-bold">// 4. ASSIGNMENT (Record their spoken answer into your box)</span>
+        <span class="text-slate-300">guestName = robotInput.nextLine();</span>
+
+        <span class="text-orange-400 font-bold">// 5. COMBINED OUTPUT (Speak back to the user)</span>
+        <span class="text-slate-300">System.out.println("Welcome to the building, " + guestName + "!");</span>
+
+        <span class="text-slate-500">// Clean up our scanner stream
+        robotInput.close();</span>
+    <span class="text-slate-400">}
+}</span></pre>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section id="content-scene2" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-xl border border-slate-200 shadow-sm">
+                <span class="text-sm font-bold text-blue-600 uppercase tracking-widest block mb-2">Client Ticket 02</span>
+                <h2 class="text-3xl font-black text-slate-900 mb-2">The Cinema Usher</h2>
+                <div class="flex items-center gap-2 mb-6 text-sm text-slate-500 font-medium">
+                    <span>&#127903; Client: Multiplex Cinemas</span>
+                </div>
+                
+                <div class="bg-slate-100 p-6 rounded-lg border border-slate-200 mb-8">
+                    <h3 class="font-bold text-slate-800 mb-2 text-lg">Mission Briefing</h3>
+                    <p class="text-slate-700 leading-relaxed">
+                        Multiplex Cinemas is replacing their ticket ushers with Sentinel bots to check IDs for Category III (adult-rated) movies. The robot needs to ask the moviegoer for their age, store that data, and output a confirmation message. The cinema's policy states they only care about whole years, not fractions, months, or decimals.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-slate-800 border-b border-slate-200 pb-2">Target Data Requirements:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-slate-700">
+                        <li>Determine the correct data type to store a <strong>whole number</strong>.</li>
+                        <li>Declare a smartly named variable.</li>
+                        <li>Ask the user to enter their age.</li>
+                        <li>Assign their input to your variable. (<em>Hint: Which Scanner tool reads whole numbers?</em>)</li>
+                        <li>Print a summary confirming the recorded age.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="content-scene3" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-xl border border-slate-200 shadow-sm">
+                <span class="text-sm font-bold text-blue-600 uppercase tracking-widest block mb-2">Client Ticket 03</span>
+                <h2 class="text-3xl font-black text-slate-900 mb-2">The Clinic Screener</h2>
+                <div class="flex items-center gap-2 mb-6 text-sm text-slate-500 font-medium">
+                    <span>&#127973; Client: City Hospital</span>
+                </div>
+                
+                <div class="bg-slate-100 p-6 rounded-lg border border-slate-200 mb-8">
+                    <h3 class="font-bold text-slate-800 mb-2 text-lg">Mission Briefing</h3>
+                    <p class="text-slate-700 leading-relaxed">
+                        City Hospital requires a robotic nurse stationed at the emergency entrance to check incoming patients for a fever. The robot must ask for the patient's current body temperature. Because medical data requires high precision (e.g., 37.5 degrees, 38.2 degrees), the robot must be capable of storing decimal points without rounding them away.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-slate-800 border-b border-slate-200 pb-2">Target Data Requirements:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-slate-700">
+                        <li>Determine the correct data type to store a <strong>precise decimal number</strong>.</li>
+                        <li>Declare a correctly named variable.</li>
+                        <li>Ask the user to enter their exact temperature.</li>
+                        <li>Assign their input to your variable using the corresponding Scanner command.</li>
+                        <li>Print a medical summary message displaying the recorded temperature.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="content-scene4" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-xl border border-slate-200 shadow-sm">
+                <span class="text-sm font-bold text-blue-600 uppercase tracking-widest block mb-2">Client Ticket 04</span>
+                <h2 class="text-3xl font-black text-slate-900 mb-2">The VIP Bouncer</h2>
+                <div class="flex items-center gap-2 mb-6 text-sm text-slate-500 font-medium">
+                    <span>&#128747; Client: Exclusive Airport Lounge</span>
+                </div>
+                
+                <div class="bg-slate-100 p-6 rounded-lg border border-slate-200 mb-8">
+                    <h3 class="font-bold text-slate-800 mb-2 text-lg">Mission Briefing</h3>
+                    <p class="text-slate-700 leading-relaxed">
+                        An exclusive first-class airport lounge needs a gatekeeper bot. This is a highly secure location, and the robot doesn't even need to know the person's name or age. It only has one job: asking the central system if the person standing at the door is on the VIP guest list or not. It needs to store a simple "Yes/True" or "No/False" state.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-slate-800 border-b border-slate-200 pb-2">Target Data Requirements:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-slate-700">
+                        <li>Determine the correct data type to store a pure <strong>true or false state</strong>.</li>
+                        <li>Declare a variable (e.g., something starting with "is...").</li>
+                        <li>Ask the user if they are a VIP (tell them to type 'true' or 'false').</li>
+                        <li>Capture their input.</li>
+                        <li>Output a message stating their VIP status.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="content-scene5" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-xl border border-slate-200 shadow-sm">
+                <span class="text-sm font-bold text-blue-600 uppercase tracking-widest block mb-2">Client Ticket 05</span>
+                <h2 class="text-3xl font-black text-slate-900 mb-2">The Metro Turnstile</h2>
+                <div class="flex items-center gap-2 mb-6 text-sm text-slate-500 font-medium">
+                    <span>&#128647; Client: City Subway System</span>
+                </div>
+                
+                <div class="bg-slate-100 p-6 rounded-lg border border-slate-200 mb-8">
+                    <h3 class="font-bold text-slate-800 mb-2 text-lg">Mission Briefing</h3>
+                    <p class="text-slate-700 leading-relaxed">
+                        The city subway system charges different prices based on travel zones. Commuters are assigned to Zone 'A', Zone 'B', or Zone 'C'. The automated turnstile robot must ask the commuter for their zone code and store it. To save memory, the system must store exactly <strong>one single letter</strong>, not a whole string of text.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-slate-800 border-b border-slate-200 pb-2">Target Data Requirements:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-slate-700">
+                        <li>Determine the correct data type to store a <strong>single character</strong>.</li>
+                        <li>Declare the variable.</li>
+                        <li>Ask the user to enter their Zone letter.</li>
+                        <li><em>Special Scanner Note:</em> Since Scanner doesn't have a direct command for this type, you must read the next word, and grab the first letter using: <code>robotInput.next().charAt(0);</code></li>
+                        <li>Output a message confirming the routing zone.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="content-scene6" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-xl border-l-4 border-l-amber-500 shadow-sm">
+                <span class="text-sm font-bold text-blue-600 uppercase tracking-widest block mb-2">Client Ticket 06</span>
+                <h2 class="text-3xl font-black text-slate-900 mb-2">The CyberCade Prize Vendor</h2>
+                <div class="flex items-center gap-2 mb-6 text-sm text-slate-500 font-medium">
+                    <span>&#127918; Client: CyberCade Arcades</span>
+                </div>
+                
+                <div class="bg-slate-100 p-6 rounded-lg border border-slate-200 mb-8">
+                    <h3 class="font-bold text-slate-800 mb-2 text-lg">Mission Briefing</h3>
+                    <p class="text-slate-700 leading-relaxed">
+                        This client requires a robot that can handle multiple pieces of information at once! The prize dispenser robot must first ask the player for their Gamer Tag (alias text). Next, it needs to ask them exactly how many digital prize tickets they have won (a whole number). It must store both pieces of data simultaneously.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-slate-800 border-b border-slate-200 pb-2">Target Data Requirements:</h3>
+                    <p class="text-slate-600 text-sm mb-2">You will need to do Steps 1, 3, and 4 <em>twice</em> in this program!</p>
+                    <ul class="list-disc list-inside space-y-2 text-slate-700">
+                        <li>Declare <strong>two separate variables</strong> at the top of your code (one for text, one for a whole number).</li>
+                        <li>Print a prompt asking for the gamer tag.</li>
+                        <li>Assign the input to the text variable.</li>
+                        <li>Print a second prompt asking for the ticket count.</li>
+                        <li>Assign the input to the number variable.</li>
+                        <li>Print a single output message that combines <em>both</em> variables into the sentence.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="content-scene7" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-xl border-l-4 border-l-red-500 shadow-sm">
+                <span class="text-sm font-bold text-blue-600 uppercase tracking-widest block mb-2">Client Ticket 07</span>
+                <h2 class="text-3xl font-black text-slate-900 mb-2">The Bank Teller Bot</h2>
+                <div class="flex items-center gap-2 mb-6 text-sm text-slate-500 font-medium">
+                    <span>&#127974; Client: Bank of the Future</span>
+                </div>
+                
+                <div class="bg-slate-100 p-6 rounded-lg border border-slate-200 mb-8">
+                    <h3 class="font-bold text-slate-800 mb-2 text-lg">Mission Briefing (Advanced)</h3>
+                    <p class="text-slate-700 leading-relaxed">
+                        The Bank of the Future needs a highly secure, multi-sensor robotic teller. This is your final Phase 2 test. The robot must capture a complex data profile containing three unique pieces of information: the customer's full name, their exact account balance down to the decimal penny, and a system security flag checking if their account is currently frozen.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-slate-800 border-b border-slate-200 pb-2">Target Data Requirements:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-slate-700">
+                        <li>Declare <strong>three separate variables</strong> using three different data types.</li>
+                        <li>Prompt and assign the text name.</li>
+                        <li>Prompt and assign the precise decimal balance.</li>
+                        <li>Prompt and assign the true/false frozen status.</li>
+                        <li>Output a complete "Account Profile Summary" that neatly displays all three pieces of stored information to the screen.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        function switchTab(tabId) {
+            // Get all tab buttons and content sections
+            const tabs = document.querySelectorAll('.tab-btn');
+            const contents = document.querySelectorAll('.tab-content');
+            
+            // Remove active classes and hide all content
+            tabs.forEach(tab => {
+                tab.classList.remove('active', 'bg-white', 'shadow-sm');
+                tab.classList.add('bg-slate-100/60');
+            });
+            contents.forEach(content => content.classList.add('hidden'));
+            
+            // Add active class to clicked tab and show corresponding content
+            const selectedTab = document.getElementById('tab-' + tabId);
+            selectedTab.classList.add('active', 'bg-white', 'shadow-sm');
+            selectedTab.classList.remove('bg-slate-100/60');
+            
+            document.getElementById('content-' + tabId).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
