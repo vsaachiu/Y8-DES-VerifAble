@@ -12,9 +12,7 @@
     <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-white text-lg">
-                    V
-                </div>
+                <img src="LogoIcon.png" alt="VerifAble logo" class="h-12 w-auto object-contain" />
                 <div>
                     <span class="text-base font-bold text-slate-900 tracking-tight block">VerifAble Sentinels Inc.</span>
                     <span class="text-xs text-slate-500 block">Truly Adaptable Robotic Services</span>
@@ -42,11 +40,11 @@
                 <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
                     Until now, our robots have only been able to read static data. It's time to activate their microphone and communication arrays! By utilizing Java's <code>Scanner</code> tool, you will program our Sentinel units to ask human targets questions, listen to their answers, store those answers in variables, and speak back to them. Review the template guide, then complete the 7 client tickets below.
                 </p>
-                <img src="2-0.png" alt="Phase 2 header visual" class="w-auto object-contain" />
+                <img src="2-0.png" alt="Phase 2 header visual" class="w-auto" />
             </div>
         </div>
 
-        <div class="flex flex-wrap gap-2 border-b border-slate-200 pb-4 mb-6">
+        <div class="sticky top-16 z-40 bg-slate-50/95 backdrop-blur supports-[backdrop-filter]:bg-slate-50/80 flex flex-wrap gap-2 border-b border-slate-200 pb-4 mb-6">
             <button onclick="switchTab('overview')" id="tab-overview" class="tab-btn active px-4 py-2 rounded-md font-medium text-sm text-slate-600 hover:text-slate-900 border border-transparent bg-slate-100/60">
                 &#128214; Template Guide
             </button>
@@ -613,6 +611,18 @@ public class Main {
                 </div>
             </div>
         </section>
+
+        <footer class="mt-8 border-t border-slate-200 pt-5 pb-2">
+            <div class="flex flex-wrap items-center gap-3 justify-end">
+                <img src="LogoIcon.png" alt="VerifAble logo" class="h-7 w-auto object-contain opacity-90" />
+                <a href="https://www.jdoodle.com/start-coding" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-md border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors">
+                    JDOODLE
+                </a>
+                <a href="https://docs.google.com/spreadsheets/d/1t62mxmHl3mMAxzmIYN__y6-FahjwqgHuLwPGQN-qIFo/edit?gid=1799069975#gid=1799069975" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-md border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors">
+                    SUBMIT LINK
+                </a>
+            </div>
+        </footer>
 
     </main>
 
