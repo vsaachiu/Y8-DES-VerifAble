@@ -32,6 +32,8 @@
     <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col">
         
         <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm mb-8">
+                            
+
             <div class="max-w-4xl">
                 <span class="text-xs font-bold uppercase tracking-wider text-blue-600 block mb-1">Employee Dashboard</span>
                 <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
@@ -40,6 +42,7 @@
                 <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
                     Until now, our robots have only been able to read static data. It's time to activate their microphone and communication arrays! By utilizing Java's <code>Scanner</code> tool, you will program our Sentinel units to ask human targets questions, listen to their answers, store those answers in variables, and speak back to them. Review the template guide, then complete the 7 client tickets below.
                 </p>
+                <img src="2-0.png" alt="Phase 2 header visual" class="w-auto object-contain" />
             </div>
         </div>
 
@@ -48,25 +51,25 @@
                 &#128214; Template Guide
             </button>
             <button onclick="switchTab('scene1')" id="tab-scene1" class="tab-btn px-4 py-2 rounded-md font-medium text-sm text-slate-600 hover:text-slate-900 border border-transparent bg-slate-100/60">
-                Ticket 01 (Tutorial)
+                Scene 01 (Tutorial)
             </button>
             <button onclick="switchTab('scene2')" id="tab-scene2" class="tab-btn px-4 py-2 rounded-md font-medium text-sm text-slate-600 hover:text-slate-900 border border-transparent bg-slate-100/60">
-                Ticket 02
+                Scene 02
             </button>
             <button onclick="switchTab('scene3')" id="tab-scene3" class="tab-btn px-4 py-2 rounded-md font-medium text-sm text-slate-600 hover:text-slate-900 border border-transparent bg-slate-100/60">
-                Ticket 03
+                Scene 03
             </button>
             <button onclick="switchTab('scene4')" id="tab-scene4" class="tab-btn px-4 py-2 rounded-md font-medium text-sm text-slate-600 hover:text-slate-900 border border-transparent bg-slate-100/60">
-                Ticket 04
+                Scene 04
             </button>
             <button onclick="switchTab('scene5')" id="tab-scene5" class="tab-btn px-4 py-2 rounded-md font-medium text-sm text-slate-600 hover:text-slate-900 border border-transparent bg-slate-100/60">
-                Ticket 05
+                Scene 05
             </button>
             <button onclick="switchTab('scene6')" id="tab-scene6" class="tab-btn px-4 py-2 rounded-md font-medium text-sm text-slate-600 hover:text-slate-900 border border-transparent bg-slate-100/60">
-                Ticket 06
+                Scene 06
             </button>
             <button onclick="switchTab('scene7')" id="tab-scene7" class="tab-btn px-4 py-2 rounded-md font-medium text-sm text-slate-600 hover:text-slate-900 border border-transparent bg-slate-100/60">
-                Ticket 07
+                Scene 07
             </button>
         </div>
 
@@ -116,7 +119,7 @@ public class Main {
             <div class="bg-white p-6 sm:p-8 rounded-xl border-2 border-blue-200 shadow-md relative overflow-hidden">
                 <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg uppercase tracking-widest">Tutorial Mode Active</div>
                 
-                <span class="text-sm font-bold text-blue-600 uppercase tracking-widest block mb-2">Client Ticket 01</span>
+                <span class="text-sm font-bold text-blue-600 uppercase tracking-widest block mb-2">Client Scene 01</span>
                 <h2 class="text-3xl font-black text-slate-900 mb-2">The Lobby Greeter</h2>
                 <div class="flex items-center gap-2 mb-6 text-sm text-slate-500 font-medium">
                     <span>&#127980; Client: Corporate Headquarters</span>
@@ -275,7 +278,7 @@ public class Main {
 
         <section id="content-scene2" class="tab-content hidden space-y-6">
             <div class="bg-white p-6 sm:p-8 rounded-xl border border-slate-200 shadow-sm">
-                <span class="text-sm font-bold text-blue-600 uppercase tracking-widest block mb-2">Client Ticket 02</span>
+                <span class="text-sm font-bold text-blue-600 uppercase tracking-widest block mb-2">Client Scene 02</span>
                 <h2 class="text-3xl font-black text-slate-900 mb-2">The Cinema Usher</h2>
                 <div class="flex items-center gap-2 mb-6 text-sm text-slate-500 font-medium">
                     <span>&#127903; Client: Multiplex Cinemas</span>
@@ -331,7 +334,7 @@ public class Main {
 
         <section id="content-scene3" class="tab-content hidden space-y-6">
             <div class="bg-white p-6 sm:p-8 rounded-xl border border-slate-200 shadow-sm">
-                <span class="text-sm font-bold text-blue-600 uppercase tracking-widest block mb-2">Client Ticket 03</span>
+                <span class="text-sm font-bold text-blue-600 uppercase tracking-widest block mb-2">Client Scene 03</span>
                 <h2 class="text-3xl font-black text-slate-900 mb-2">The Clinic Screener</h2>
                 <div class="flex items-center gap-2 mb-6 text-sm text-slate-500 font-medium">
                     <span>&#127973; Client: City Hospital</span>
@@ -387,7 +390,7 @@ public class Main {
 
         <section id="content-scene4" class="tab-content hidden space-y-6">
             <div class="bg-white p-6 sm:p-8 rounded-xl border border-slate-200 shadow-sm">
-                <span class="text-sm font-bold text-blue-600 uppercase tracking-widest block mb-2">Client Ticket 04</span>
+                <span class="text-sm font-bold text-blue-600 uppercase tracking-widest block mb-2">Client Scene 04</span>
                 <h2 class="text-3xl font-black text-slate-900 mb-2">The VIP Bouncer</h2>
                 <div class="flex items-center gap-2 mb-6 text-sm text-slate-500 font-medium">
                     <span>&#128747; Client: Exclusive Airport Lounge</span>
@@ -443,7 +446,7 @@ public class Main {
 
         <section id="content-scene5" class="tab-content hidden space-y-6">
             <div class="bg-white p-6 sm:p-8 rounded-xl border border-slate-200 shadow-sm">
-                <span class="text-sm font-bold text-blue-600 uppercase tracking-widest block mb-2">Client Ticket 05</span>
+                <span class="text-sm font-bold text-blue-600 uppercase tracking-widest block mb-2">Client Scene 05</span>
                 <h2 class="text-3xl font-black text-slate-900 mb-2">The Metro Turnstile</h2>
                 <div class="flex items-center gap-2 mb-6 text-sm text-slate-500 font-medium">
                     <span>&#128647; Client: City Subway System</span>
@@ -499,7 +502,7 @@ public class Main {
 
         <section id="content-scene6" class="tab-content hidden space-y-6">
             <div class="bg-white p-6 sm:p-8 rounded-xl border-l-4 border-l-amber-500 shadow-sm">
-                <span class="text-sm font-bold text-blue-600 uppercase tracking-widest block mb-2">Client Ticket 06</span>
+                <span class="text-sm font-bold text-blue-600 uppercase tracking-widest block mb-2">Client Scene 06</span>
                 <h2 class="text-3xl font-black text-slate-900 mb-2">The CyberCade Prize Vendor</h2>
                 <div class="flex items-center gap-2 mb-6 text-sm text-slate-500 font-medium">
                     <span>&#127918; Client: CyberCade Arcades</span>
@@ -557,7 +560,7 @@ public class Main {
 
         <section id="content-scene7" class="tab-content hidden space-y-6">
             <div class="bg-white p-6 sm:p-8 rounded-xl border-l-4 border-l-red-500 shadow-sm">
-                <span class="text-sm font-bold text-blue-600 uppercase tracking-widest block mb-2">Client Ticket 07</span>
+                <span class="text-sm font-bold text-blue-600 uppercase tracking-widest block mb-2">Client Scene 07</span>
                 <h2 class="text-3xl font-black text-slate-900 mb-2">The Bank Teller Bot</h2>
                 <div class="flex items-center gap-2 mb-6 text-sm text-slate-500 font-medium">
                     <span>&#127974; Client: Bank of the Future</span>
