@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VerifAble Sentinels Inc. - Phase 3: Conditionals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="phase3 min-h-screen flex flex-col bg-slate-50">
+
+    <!-- GLOBAL NAVBAR -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="LogoIcon.png" alt="VerifAble logo" class="h-12 w-auto object-contain" />
+                <div>
+                    <span class="text-base font-bold text-slate-900 tracking-tight block">VerifAble Sentinels Inc.</span>
+                    <span class="text-xs text-slate-500 block">Truly Adaptable Robotic Services</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 text-right text-xs text-slate-500">
+                <div class="hidden sm:block">
+                    <span class="font-medium text-slate-700 block">Junior Logic Engineer Workspace</span>
+                    <span>Coding Phase 3: The Brain (Conditionals)</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN PORTAL CONTAINER -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col">
+        
+        <!-- WELCOME SUMMARY -->
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm mb-8">
+            <div class="max-w-4xl">
+                <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 block mb-1">System Architecture</span>
+                <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
+                    Project Phase 3: The Logic Core
+                </h1>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    You have successfully calibrated the optical sensors and activated the communication arrays. Our Sentinel robots can now see, hear, and store data perfectly. But data is useless without intelligence. Review your Mission Briefing below to access your programming environment and begin your contracts.
+                </p>
+            </div>
+        </div>
+
+        <!-- TAB NAVIGATION -->
+        <div class="sticky top-16 z-40 bg-slate-50/95 backdrop-blur supports-[backdrop-filter]:bg-slate-50/80 flex flex-wrap gap-2 border-b border-slate-200 pb-4 mb-6">
+            <button onclick="switchTab('briefing')" id="tab-briefing" class="tab-btn active px-4 py-2 rounded-md font-medium text-sm text-slate-600 hover:text-slate-900 border border-transparent bg-slate-100/60">
+                &#9888; Mission Briefing
+            </button>
+            <button onclick="switchTab('scene0')" id="tab-scene0" class="tab-btn px-4 py-2 rounded-md font-medium text-sm text-slate-600 hover:text-slate-900 border border-transparent bg-slate-100/60">
+                Training: Cafeteria Bot
+            </button>
+            <button onclick="switchTab('scene1')" id="tab-scene1" class="tab-btn px-4 py-2 rounded-md font-medium text-sm text-slate-600 hover:text-slate-900 border border-transparent bg-slate-100/60">
+                01: VIP Concert
+            </button>
+            <button onclick="switchTab('scene2')" id="tab-scene2" class="tab-btn px-4 py-2 rounded-md font-medium text-sm text-slate-600 hover:text-slate-900 border border-transparent bg-slate-100/60">
+                02: MTR Turnstile
+            </button>
+            <button onclick="switchTab('scene3')" id="tab-scene3" class="tab-btn px-4 py-2 rounded-md font-medium text-sm text-slate-600 hover:text-slate-900 border border-transparent bg-slate-100/60">
+                03: VSA Elevator
+            </button>
+            <button onclick="switchTab('scene4')" id="tab-scene4" class="tab-btn px-4 py-2 rounded-md font-medium text-sm text-slate-600 hover:text-slate-900 border border-transparent bg-slate-100/60">
+                04: Code Cafe
+            </button>
+            <button onclick="switchTab('scene5')" id="tab-scene5" class="tab-btn px-4 py-2 rounded-md font-medium text-sm text-slate-600 hover:text-slate-900 border border-transparent bg-slate-100/60">
+                05: Library
+            </button>
+            <button onclick="switchTab('scene6')" id="tab-scene6" class="tab-btn px-4 py-2 rounded-md font-medium text-sm text-slate-600 hover:text-slate-900 border border-transparent bg-slate-100/60">
+                06: Museum
+            </button>
+            <button onclick="switchTab('scene7')" id="tab-scene7" class="tab-btn px-4 py-2 rounded-md font-medium text-sm text-slate-600 hover:text-slate-900 border border-transparent bg-slate-100/60">
+                07: Bank Loan
+            </button>
+            <a href="https://www.jdoodle.com/start-coding" target="_blank" rel="noopener noreferrer" class="tab-btn px-4 py-2 rounded-md font-medium text-sm text-slate-600 hover:text-slate-900 border border-transparent bg-slate-100/60">
+                JDOODLE
+            </a>
+            <a href="https://docs.google.com/spreadsheets/d/1t62mxmHl3mMAxzmIYN__y6-FahjwqgHuLwPGQN-qIFo/edit?gid=1799069975#gid=1799069975" target="_blank" rel="noopener noreferrer" class="tab-btn px-4 py-2 rounded-md font-medium text-sm text-slate-600 hover:text-slate-900 border border-transparent bg-slate-100/60">
+                SUBMIT LINK
+            </a>
+        </div>
+
+        <!-- SECTION: MISSION BRIEFING -->
+        <section id="content-briefing" class="tab-content block space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-xl border border-slate-200 shadow-sm relative overflow-hidden">
+                <div class="max-w-3xl">
+                    <h2 class="text-2xl font-black text-slate-900 mb-4 pb-2 border-b border-slate-100">Attention, Junior Logic Engineers.</h2>
+                    <p class="text-base text-slate-700 mb-6 leading-relaxed">
+                        Welcome to <strong>Phase 3: The Brain</strong>. Your mission is to program the core decision-making algorithms for our units out in the field. Using <code>if</code>, <code>else if</code>, and <code>else</code> statements, you will teach these machines how to analyze the variables they collect and make high-stakes, real-time decisions. 
+                    </p>
+                    <p class="text-base text-slate-700 mb-8 leading-relaxed">
+                        One missed logic gate could result in a coaster accident, a massive financial loss, or a major security breach. Precision is everything.
+                    </p>
+                    
+                    <div class="bg-slate-900 rounded-xl p-6 border border-slate-800 text-center mb-8">
+                        <h3 class="text-emerald-400 font-bold uppercase tracking-widest text-sm mb-4">Your Engineering Workspace</h3>
+                        <p class="text-slate-300 text-sm mb-6 max-w-xl mx-auto">
+                            For all Phase 3 missions, you will use our automated JDoodle Master Template. Do <strong>NOT</strong> use the <code>Scanner</code> tool here. Our hidden system grader will automatically rapid-fire test your logic against dozens of hidden scenarios.
+                        </p>
+                        <a href="https://www.jdoodle.com/ia/1U3u" target="_blank" rel="noopener noreferrer" class="glow-button inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-8 rounded-full text-lg">
+                            &#128187; Access Master JDoodle Workspace
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: TRAINING MODULE -->
+        <section id="content-scene0" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-xl border-l-4 border-l-blue-500 shadow-sm">
+                <span class="text-sm font-bold text-blue-600 uppercase tracking-widest block mb-2">Training Simulator</span>
+                <h2 class="text-3xl font-black text-slate-900 mb-2">The Cafeteria Bot</h2>
+                <div class="flex items-center gap-2 mb-6 text-sm text-slate-500 font-medium">
+                    <span>&#127979; Client: Central High School District</span>
+                </div>
+                
+                <p class="text-slate-700 leading-relaxed mb-6">
+                    Before we send you to the high-stakes VIP queues, you need to pass a simulated logic trial. Central High School wants to speed up their lunch lines with an automated checkout bot. In this training simulator, you will learn the three deadliest traps that cause Junior Engineers to crash their robots.
+                </p>
+
+                <div class="space-y-6">
+                    <div class="bg-slate-50 p-5 rounded-lg border border-slate-200">
+                        <h4 class="font-bold text-slate-800 mb-2 text-lg">Trap 1: The Box Filler (=) vs. The Question Asker (==)</h4>
+                        <p class="text-sm text-slate-600 mb-3">When dealing with numbers, a single equals sign (<code>=</code>) <strong>puts a value into a box</strong>. A double equals sign (<code>==</code>) <strong>asks a question</strong> to compare two things. If you write <code>if (studentCredits = 5)</code> inside a conditional, the robot will crash because you are trying to stuff the number 5 into the box while it's trying to ask a question!</p>
+                        <pre class="code-block text-xs bg-slate-900 text-slate-300 p-4 rounded"><span class="text-sky-400">// 🟦 WORKSPACE 1:</span>
+<span class="text-purple-400">int</span> studentCredits = <span class="text-orange-300">5</span>; <span class="text-slate-500">// The single '=' fills the box.</span>
+
+<span class="text-emerald-400">// 🟩 WORKSPACE 2:</span>
+<span class="text-pink-400">if</span> (studentCredits == <span class="text-orange-300">5</span>) { <span class="text-slate-500">// The double '==' asks: "Is it 5?"</span>
+    robotDecision = <span class="text-green-300">"LUNCH_APPROVED"</span>;
+} <span class="text-pink-400">else</span> {
+    robotDecision = <span class="text-green-300">"ADD_FUNDS"</span>;
+}</pre>
+                    </div>
+
+                    <div class="bg-slate-50 p-5 rounded-lg border border-slate-200">
+                        <h4 class="font-bold text-slate-800 mb-2 text-lg">Trap 2: The Text Trap (.equals)</h4>
+                        <p class="text-sm text-slate-600 mb-3">In Java, Strings are complex data structures. If you use <code>==</code> to compare two Strings, Java doesn't check if the <em>words</em> match; it checks if they are the exact same physical box in memory! To read the actual text, you <strong>MUST</strong> use the <code>.equals()</code> tool.</p>
+                        <pre class="code-block text-xs bg-slate-900 text-slate-300 p-4 rounded"><span class="text-sky-400">// 🟦 WORKSPACE 1:</span>
+<span class="text-purple-400">String</span> mealChoice = <span class="text-green-300">"PIZZA"</span>;
+
+<span class="text-emerald-400">// 🟩 WORKSPACE 2:</span>
+<span class="text-red-400">// WRONG: if (mealChoice == "PIZZA") <-- DO NOT DO THIS!</span>
+<span class="text-slate-500">// CORRECT:</span>
+<span class="text-pink-400">if</span> (mealChoice.equals(<span class="text-green-300">"PIZZA"</span>)) { 
+    robotDecision = <span class="text-green-300">"DISPENSE_PIZZA_SLICE"</span>;
+}</pre>
+                    </div>
+
+                    <div class="bg-slate-50 p-5 rounded-lg border border-slate-200">
+                        <h4 class="font-bold text-slate-800 mb-2 text-lg">Trap 3: The Boolean Shortcut</h4>
+                        <p class="text-sm text-slate-600 mb-3">Booleans are already <code>true</code> or <code>false</code>. You don't need to ask the robot "Is true equal to true?". You can just drop the boolean directly into the <code>if</code> parenthesis! To check if something is false, use the <code>!</code> (NOT) symbol.</p>
+                        <pre class="code-block text-xs bg-slate-900 text-slate-300 p-4 rounded"><span class="text-sky-400">// 🟦 WORKSPACE 1:</span>
+<span class="text-purple-400">boolean</span> hasAllergy = <span class="text-orange-300">true</span>;
+
+<span class="text-emerald-400">// 🟩 WORKSPACE 2:</span>
+<span class="text-red-400">// AMATEUR WAY: if (hasAllergy == true)</span>
+<span class="text-slate-500">// SENIOR ENGINEER WAY:</span>
+<span class="text-pink-400">if</span> (hasAllergy) { 
+    robotDecision = <span class="text-green-300">"WARNING_CHECK_INGREDIENTS"</span>;
+}</pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: SCENE 1 -->
+        <section id="content-scene1" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-xl border-l-4 border-l-emerald-500 shadow-sm">
+                <span class="text-sm font-bold text-emerald-600 uppercase tracking-widest block mb-2">Scene 01</span>
+                <h2 class="text-3xl font-black text-slate-900 mb-2">The VIP Concert Queue</h2>
+                <div class="flex items-center gap-2 mb-6 text-sm text-slate-500 font-medium">
+                    <span>&#127908; Client: Hong Kong Stadium Security</span>
+                </div>
+                
+                <div class="transcript-box p-6 rounded-lg mb-8">
+                    <h3 class="font-bold text-slate-700 uppercase text-xs tracking-widest mb-3 flex items-center gap-2">
+                        <span>&#127897;&#65039;</span> Client Audio Transcript
+                    </h3>
+                    <p class="text-slate-700 italic leading-relaxed text-lg">
+                        "Hong Kong Stadium security command here. We are at maximum capacity for the Olivia Rodrigo concert and the crowd is electric. The problem is, we've detected highly sophisticated forged backstage passes circulating. Our human guards are overwhelmed in the dark. We need your Sentinel robot at the VIP door. Its optical scanner will read the exact text printed on the fans' wristbands. If the text it reads is exactly 'PURPLE', let them into the backstage area. For absolutely any other color text, deny them access."
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-slate-800 border-b border-slate-200 pb-2">📋 Your Engineering Task:</h3>
+                    
+                    <div class="bg-blue-50 p-4 rounded-md border border-blue-100">
+                        <h4 class="font-bold text-blue-900 mb-1">🟦 Workspace 1:</h4>
+                        <p class="text-sm text-blue-800">Declare a variable to store the text on the wristband. Declare a boolean outcome variable (e.g., <code>boolean backstageAccess = false;</code>).</p>
+                    </div>
+
+                    <div class="bg-emerald-50 p-4 rounded-md border border-emerald-100 mt-4">
+                        <h4 class="font-bold text-emerald-900 mb-1">🟩 Workspace 2:</h4>
+                        <p class="text-sm text-emerald-800">Write the logic to check the wristband color and update your outcome variable. <em>(Hint: Remember your Cafeteria Training! Use <code>.equals()</code> for text!)</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: SCENE 2 -->
+        <section id="content-scene2" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-xl border-l-4 border-l-emerald-500 shadow-sm">
+                <span class="text-sm font-bold text-emerald-600 uppercase tracking-widest block mb-2">Scene 02</span>
+                <h2 class="text-3xl font-black text-slate-900 mb-2">The MTR Turnstile</h2>
+                <div class="flex items-center gap-2 mb-6 text-sm text-slate-500 font-medium">
+                    <span>&#128647; Client: Hong Kong MTR Corporation</span>
+                </div>
+                
+                <div class="transcript-box p-6 rounded-lg mb-8">
+                    <h3 class="font-bold text-slate-700 uppercase text-xs tracking-widest mb-3 flex items-center gap-2">
+                        <span>&#127897;&#65039;</span> Client Audio Transcript
+                    </h3>
+                    <p class="text-slate-700 italic leading-relaxed text-lg">
+                        "MTR Operations Director speaking. Admiralty station is an absolute nightmare during rush hour. We are upgrading our turnstiles and need your robot to act as the pricing brain. The robot must read the zone letter off the commuter's Octopus card. If it reads an 'A', the system needs to record a 5.0 fare. If it's a 'B', charge them 7.5. And if it's 'C', hit them with a 10.0 charge. Look, fare evasion is up, so if the scanner picks up literally any other letter, I want the fare zeroed out to 0.0 so the gates lock and security is flagged. Got it?"
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-slate-800 border-b border-slate-200 pb-2">📋 Your Engineering Task:</h3>
+                    
+                    <div class="bg-blue-50 p-4 rounded-md border border-blue-100">
+                        <h4 class="font-bold text-blue-900 mb-1">🟦 Workspace 1:</h4>
+                        <p class="text-sm text-blue-800">Extract the required variables from the transcript. You'll need a single-character variable for the zone, and a decimal variable for the final fare price.</p>
+                    </div>
+
+                    <div class="bg-emerald-50 p-4 rounded-md border border-emerald-100 mt-4">
+                        <h4 class="font-bold text-emerald-900 mb-1">🟩 Workspace 2:</h4>
+                        <p class="text-sm text-emerald-800">Construct a chained <code>if</code>, <code>else if</code>, <code>else</code> structure to route the pricing exactly as the Director requested.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: SCENE 3 -->
+        <section id="content-scene3" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-xl border-l-4 border-l-emerald-500 shadow-sm">
+                <span class="text-sm font-bold text-emerald-600 uppercase tracking-widest block mb-2">Scene 03</span>
+                <h2 class="text-3xl font-black text-slate-900 mb-2">The Overloading Elevator</h2>
+                <div class="flex items-center gap-2 mb-6 text-sm text-slate-500 font-medium">
+                    <span>&#127986; Client: Victoria Shanghai Academy (VSA)</span>
+                </div>
+                
+                <div class="transcript-box p-6 rounded-lg mb-8">
+                    <h3 class="font-bold text-slate-700 uppercase text-xs tracking-widest mb-3 flex items-center gap-2">
+                        <span>&#127897;&#65039;</span> Client Audio Transcript
+                    </h3>
+                    <p class="text-slate-700 italic leading-relaxed text-lg">
+                        "Hey Sentinels, VSA facilities management here. Lift 4 is driving us crazy—it keeps breaking down because students overload it with heavy project materials. We are installing a digital scale at the door. I need your robot to record the weight of the incoming passenger or cargo. Then, it needs to record the current weight of everyone already inside the lift. These numbers can definitely have decimals, since we're measuring exact kilograms. The robot must add those two weights together. If the total goes strictly over 300.0 kilos, I need the system to trigger `true` so the overload alarm goes off. If it's safe, keep it `false`. Can you code that?"
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-slate-800 border-b border-slate-200 pb-2">📋 Your Engineering Task:</h3>
+                    
+                    <div class="bg-blue-50 p-4 rounded-md border border-blue-100">
+                        <h4 class="font-bold text-blue-900 mb-1">🟦 Workspace 1:</h4>
+                        <p class="text-sm text-blue-800">Listen to the client. What types of variables do you need to hold weights with decimals? You need three variables in total (two for the inputs, one boolean for the alarm).</p>
+                    </div>
+
+                    <div class="bg-emerald-50 p-4 rounded-md border border-emerald-100 mt-4">
+                        <h4 class="font-bold text-emerald-900 mb-1">🟩 Workspace 2:</h4>
+                        <p class="text-sm text-emerald-800">Write the math and the <code>if/else</code> logic to trigger the alarm based on the facility manager's exact limit.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: SCENE 4 -->
+        <section id="content-scene4" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-xl border-l-4 border-l-emerald-500 shadow-sm">
+                <span class="text-sm font-bold text-emerald-600 uppercase tracking-widest block mb-2">Scene 04</span>
+                <h2 class="text-3xl font-black text-slate-900 mb-2">The Wi-Fi Hotspot Cafe</h2>
+                <div class="flex items-center gap-2 mb-6 text-sm text-slate-500 font-medium">
+                    <span>&#9785;&#65039; Client: Code Cafe</span>
+                </div>
+                
+                <div class="transcript-box p-6 rounded-lg mb-8">
+                    <h3 class="font-bold text-slate-700 uppercase text-xs tracking-widest mb-3 flex items-center gap-2">
+                        <span>&#127897;&#65039;</span> Client Audio Transcript
+                    </h3>
+                    <p class="text-slate-700 italic leading-relaxed text-lg">
+                        "Welcome to Code Cafe! Listen, we love our customers, but we have people sitting here for six hours without buying anything, just stealing our Wi-Fi. We need a login script for the router. I want your robot to check two things: First, did they actually make a food purchase? We just need a simple true or false for that. Second, what text did they type into the password box? We will let them on the network—meaning your script returns `true` for access—if they either made a purchase, OR if they managed to type our secret backdoor password exactly: 'JavaRules123'. Otherwise, kick them off with a `false`."
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-slate-800 border-b border-slate-200 pb-2">📋 Your Engineering Task:</h3>
+                    
+                    <div class="bg-blue-50 p-4 rounded-md border border-blue-100">
+                        <h4 class="font-bold text-blue-900 mb-1">🟦 Workspace 1:</h4>
+                        <p class="text-sm text-blue-800">Identify the two input variables needed from the transcript and declare a boolean for the final access decision.</p>
+                    </div>
+
+                    <div class="bg-emerald-50 p-4 rounded-md border border-emerald-100 mt-4">
+                        <h4 class="font-bold text-emerald-900 mb-1">🟩 Workspace 2:</h4>
+                        <p class="text-sm text-emerald-800">Use the logical OR operator (<code>||</code>) to grant access if either of the cafe's conditions are met.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: SCENE 5 -->
+        <section id="content-scene5" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-xl border-l-4 border-l-emerald-500 shadow-sm">
+                <span class="text-sm font-bold text-emerald-600 uppercase tracking-widest block mb-2">Scene 05</span>
+                <h2 class="text-3xl font-black text-slate-900 mb-2">The Strict Librarian</h2>
+                <div class="flex items-center gap-2 mb-6 text-sm text-slate-500 font-medium">
+                    <span>&#128218; Client: City Central Library</span>
+                </div>
+                
+                <div class="transcript-box p-6 rounded-lg mb-8">
+                    <h3 class="font-bold text-slate-700 uppercase text-xs tracking-widest mb-3 flex items-center gap-2">
+                        <span>&#127897;&#65039;</span> Client Audio Transcript
+                    </h3>
+                    <p class="text-slate-700 italic leading-relaxed text-lg">
+                        "Shh! Quiet in the library, please. I am the Head Librarian, and our book loss rate is unacceptable. We are automating the checkout desk. When someone approaches, the system must verify three pieces of information. First, are they a registered member? Yes or no. Second, exactly how many books do they currently have overdue? And third, how many books do they already have checked out in their bag? I will only allow the checkout machine to approve the transaction—returning `true`—if they are a valid member, they have exactly zero overdue books, AND they are currently holding less than 10 books. Any other situation is a firm `false`."
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-slate-800 border-b border-slate-200 pb-2">📋 Your Engineering Task:</h3>
+                    
+                    <div class="bg-blue-50 p-4 rounded-md border border-blue-100">
+                        <h4 class="font-bold text-blue-900 mb-1">🟦 Workspace 1:</h4>
+                        <p class="text-sm text-blue-800">You need three input variables (one boolean, two integers) and one boolean for the checkout decision.</p>
+                    </div>
+
+                    <div class="bg-emerald-50 p-4 rounded-md border border-emerald-100 mt-4">
+                        <h4 class="font-bold text-emerald-900 mb-1">🟩 Workspace 2:</h4>
+                        <p class="text-sm text-emerald-800">Use the logical AND operator (<code>&&</code>) to combine the Librarian's three strict rules into a single <code>if</code> statement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: SCENE 6 -->
+        <section id="content-scene6" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-xl border-l-4 border-l-purple-500 shadow-sm relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg uppercase tracking-widest">Nested Logic Challenge</div>
+                <span class="text-sm font-bold text-emerald-600 uppercase tracking-widest block mb-2">Scene 06</span>
+                <h2 class="text-3xl font-black text-slate-900 mb-2">Museum Free-Admission Tuesday</h2>
+                <div class="flex items-center gap-2 mb-6 text-sm text-slate-500 font-medium">
+                    <span>&#127963;&#65039; Client: The Heritage Museum</span>
+                </div>
+                
+                <div class="transcript-box p-6 rounded-lg mb-8">
+                    <h3 class="font-bold text-slate-700 uppercase text-xs tracking-widest mb-3 flex items-center gap-2">
+                        <span>&#127897;&#65039;</span> Client Audio Transcript
+                    </h3>
+                    <p class="text-slate-700 italic leading-relaxed text-lg">
+                        "Hello! I'm the Director of the Heritage Museum. We're running a community promotion, but the front desk is getting confused by the rules. We need an automated gate. The gate needs to know the current day of the week as text, the visitor's exact age, and a simple yes/no on whether they are a student. Here is the policy: It must be exactly 'Tuesday' for the promotion to even apply. If it IS Tuesday, we grant free entry (return `true`) if the visitor is a child under 12, a senior over 65, OR an active student. If it's not Tuesday, or they don't meet those specific age or student requirements, return `false`. Think you can handle that logic?"
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-slate-800 border-b border-slate-200 pb-2">📋 Your Engineering Task:</h3>
+                    
+                    <div class="bg-blue-50 p-4 rounded-md border border-blue-100">
+                        <h4 class="font-bold text-blue-900 mb-1">🟦 Workspace 1:</h4>
+                        <p class="text-sm text-blue-800">Declare the text, number, and true/false variables needed to store the visitor's profile, plus the outcome boolean.</p>
+                    </div>
+
+                    <div class="bg-purple-50 p-4 rounded-md border border-purple-100 mt-4">
+                        <h4 class="font-bold text-purple-900 mb-1">🟩 Workspace 2:</h4>
+                        <p class="text-sm text-purple-800">This requires <strong>Nested Logic</strong>. First, check if the day is Tuesday. Inside that <code>if</code> block, write another <code>if</code> statement using OR (<code>||</code>) operators to check the age and student conditions!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: SCENE 7 -->
+        <section id="content-scene7" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-xl border-l-4 border-l-purple-500 shadow-sm relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg uppercase tracking-widest">Final Boss Challenge</div>
+                <span class="text-sm font-bold text-emerald-600 uppercase tracking-widest block mb-2">Scene 07</span>
+                <h2 class="text-3xl font-black text-slate-900 mb-2">The Bank Loan Algorithm</h2>
+                <div class="flex items-center gap-2 mb-6 text-sm text-slate-500 font-medium">
+                    <span>&#127974; Client: Hong Kong Standard Bank</span>
+                </div>
+                
+                <div class="transcript-box p-6 rounded-lg mb-8">
+                    <h3 class="font-bold text-slate-700 uppercase text-xs tracking-widest mb-3 flex items-center gap-2">
+                        <span>&#127897;&#65039;</span> Client Audio Transcript
+                    </h3>
+                    <p class="text-slate-700 italic leading-relaxed text-lg">
+                        "Chief Financial Officer speaking. We are replacing our junior loan officers with your algorithm to eliminate human bias. The robot must evaluate three data points for every applicant: their whole-number credit score, their exact yearly income—which needs to track dollars and cents—and a simple flag verifying if they have existing unpaid debt. We need a text-based decision returned. If their credit score is strictly above 750 AND their income is strictly over 80000.0, output 'LOW_INTEREST_APPROVED'. If their credit score sits anywhere between 600 and 750 (inclusive of both limits) AND they have absolutely no existing debt, output 'STANDARD_APPROVED'. For literally anyone else, output 'LOAN_DENIED'. Do not mess this up."
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-slate-800 border-b border-slate-200 pb-2">📋 Your Engineering Task:</h3>
+                    
+                    <div class="bg-blue-50 p-4 rounded-md border border-blue-100">
+                        <h4 class="font-bold text-blue-900 mb-1">🟦 Workspace 1:</h4>
+                        <p class="text-sm text-blue-800">Declare the three financial variables based on the CFO's description. Declare a <code>String</code> variable to hold the final decision text.</p>
+                    </div>
+
+                    <div class="bg-purple-50 p-4 rounded-md border border-purple-100 mt-4">
+                        <h4 class="font-bold text-purple-900 mb-1">🟩 Workspace 2:</h4>
+                        <p class="text-sm text-purple-800">Write a complex <code>if</code>, <code>else if</code>, <code>else</code> chain. You will need to use <code>>=</code> and <code><=</code> to handle the "inclusive" rule perfectly! Combine conditions using <code>&&</code>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="mt-8 border-t border-slate-200 pt-5 pb-2">
+            <div class="flex flex-wrap items-center gap-3 justify-end">
+                <img src="LogoIcon.png" alt="VerifAble logo" class="h-7 w-auto object-contain opacity-90" />
+                <a href="https://www.jdoodle.com/start-coding" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-md border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors">
+                    JDOODLE
+                </a>
+                <a href="https://docs.google.com/spreadsheets/d/1t62mxmHl3mMAxzmIYN__y6-FahjwqgHuLwPGQN-qIFo/edit?gid=1799069975#gid=1799069975" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-md border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors">
+                    SUBMIT LINK
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- NAVIGATION SCRIPT -->
+    <script>
+        function switchTab(tabId) {
+            // Get all tab buttons and content sections
+            const tabs = document.querySelectorAll('.tab-btn');
+            const contents = document.querySelectorAll('.tab-content');
+            
+            // Remove active classes and hide all content
+            tabs.forEach(tab => {
+                tab.classList.remove('active', 'bg-white', 'shadow-sm');
+                tab.classList.add('bg-slate-100/60');
+            });
+            contents.forEach(content => content.classList.add('hidden'));
+            
+            // Add active class to clicked tab and show corresponding content
+            const selectedTab = document.getElementById('tab-' + tabId);
+            selectedTab.classList.add('active', 'bg-white', 'shadow-sm');
+            selectedTab.classList.remove('bg-slate-100/60');
+            
+            document.getElementById('content-' + tabId).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
